@@ -15,3 +15,7 @@ Uso:
 
         python manage.py syncdb --settings=ValoracionEmpresas.settings.local
         python manage.py runserver --settings=ValoracionEmpresas.settings.local
+        
+- Acceder desde el navegador a:
+
+        http://localhost:8000
