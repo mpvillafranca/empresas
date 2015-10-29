@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block title %} Valorador empresas | IV{% endblock %}
+
+{% block content %}
+<div class="container">
+	<div class="row cab">
+		<div class="col-md-8 contenido-bienvenida">
+			<div class="jumbotron">
+				<h2>Listado de empresas</h2>
+                <script language="javascript">
+                $(document).ready( function () {
+                    $('table.display').DataTable( {
+                        paging: false,
+                        searching: false
+                    } );
+                } );</script>
+                <table data-order='[[ 0, "asc" ]]' id="" class="display">
+                    <thead>
+                        <tr>
+                            <th>Nombre empresa</th>
+                            <th>Alumnos</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+				        {% for key,value in asociados.items %}
+			                <tr>
+			                    <td>{{ key }}</td>
+			                    <td>{% for v in value %}<a>@{{ v }}</a> {% endfor %} </td>
+			                </tr>
+				        {% endfor %}
+                     </tbody>
+                </table>
+				<table data-order='[[ 1, "desc" ]]' id="" class="display">
+                    <thead>
+                        <tr>
+                            <th>Nombre Empresa</th>
+                            <th>Nota media</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+				        {% for key,value in notas.items %}
+				                <tr>
+				                    <td>{{ key }}</td>
+				                    <td>{{ value }}</td>
+				                </tr>
+				        {% endfor %}
+                    </tbody>
+                </table>
+			</div>
+		</div>
+	</div>	
+</div>
+{% endblock %}
