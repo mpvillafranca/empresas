@@ -6,4 +6,4 @@ install:
  - pip install --upgrade pip 
  - pip install -r requirements/local.txt
 script:
- - python manage.py test apps.home --settings=ValoracionEmpresas.settings.local
+ - python src/manage.py test apps.home --settings=ValoracionEmpresas.settings.local
