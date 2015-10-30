@@ -1,9 +1,17 @@
+# -*- coding: utf-8 -*-
+
 from django.http import HttpResponse
 from django.template import RequestContext, loader
 from models import Bussiness,Student
 
 # Create your views here.
 def index(request):
+	"""
+	Vista correspondiente a la página principal de la aplicación empresas.
+		En esta vista listamos las empresas almacenadas en la base de datos, así como 
+		los alumnos que están trabajando en ella. A continuación, se muestra también 
+		un ranking de las empresas según su nota media.
+	"""
 	template = loader.get_template('home/index.html')
 	asociados=dict()
 	notas=dict()
